@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="carta" pageWidth="612" pageHeight="792" columnWidth="592" leftMargin="0" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryNewPage="true" uuid="b4e2e33f-e1d2-487f-8da6-12774aa6353c">
+	<parameter name="orden" class="java.lang.String"/>
+	<parameter name="importe" class="java.lang.String"/>
+	<parameter name="impuestos" class="java.lang.String"/>
+	<parameter name="cliente" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="producto" class="java.lang.String"/>
+	<field name="CURRENT_DATE" class="java.lang.String"/>
+	<field name="cantidad" class="java.lang.String"/>
+	<field name="subtotal_line" class="java.lang.String"/>
+	<field name="precio_unit" class="java.lang.String"/>
+	<field name="CURRENT_USER" class="java.lang.String"/>
+	<background>
+		<band height="37" splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="81" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="110" y="2" width="440" height="50" uuid="87734907-323e-4f96-8054-6794961fa18d"/>
+				<imageExpression><![CDATA["C:/Odoo19_addons/Modulos_trabajando/Modulos_propios/nc_document_template_flash/report/iconup.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="30" y="11" width="50" height="50" uuid="9916560d-6fd0-43ea-bd42-2da507d69889"/>
+				<imageExpression><![CDATA["C:/Odoo19_addons/Modulos_trabajando/Modulos_propios/nc_document_template_flash/report/icon.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="72" splitType="Stretch">
+			<textField>
+				<reportElement x="6" y="20" width="70" height="20" uuid="c9937f26-cc74-449c-b27f-5b101d7a3fa9"/>
+				<textFieldExpression><![CDATA["CLIENTES:"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="269" y="30" width="111" height="1" uuid="e24b0a1f-0b69-4e5d-aa5b-e0d49d1a1340"/>
+				<graphicElement>
+					<pen lineColor="#1FDB5E"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="5" y="2" width="62" height="18" uuid="11cec0e4-44d3-4120-be8e-1d7557475858"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["PEDIDO Nº"]]></textFieldExpression>
+			</textField>
+			<rectangle radius="0">
+				<reportElement mode="Opaque" x="400" y="10" width="80" height="40" forecolor="#FFFFFF" backcolor="#1A57DB" uuid="e9d263d3-0e12-43da-8a25-cd9314bf0dfb"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#120B0A"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="139" y="2" width="100" height="18" uuid="6145c4ac-264b-451c-b9df-1305911558e7"/>
+				<textFieldExpression><![CDATA[$P{orden}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="25" width="140" height="34" uuid="6bc780fb-2d08-4925-8e4f-df83f4616f28"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[$P{cliente}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="11" y="2" width="109" height="13" uuid="563b8274-82cf-48c1-a7c5-e5df23d3edb0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["PRODUCTO"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="372" y="0" width="60" height="18" uuid="0df2f59e-8504-4756-b0f8-d24a277312a7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d26d3ba1-ad42-415e-82bf-c92b3a89a5c8"/>
+				</reportElement>
+				<text><![CDATA[CANTIDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="299" y="1" width="66" height="18" uuid="b2b35703-ec8a-4126-84da-26a69ef513b6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9a14f283-162d-4374-9809-155c8ad38f8a"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PRECIO UNIT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="530" y="1" width="54" height="18" uuid="d39e1597-cc0a-4773-85f7-22f96037ca97">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b3ce9fec-f2e4-4bdf-bb47-414f97cedaef"/>
+				</reportElement>
+				<text><![CDATA[SUBTOTAL]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="11" y="3" width="169" height="16" uuid="a6266c50-c8db-4426-8f36-a7c6e4546317">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0b4172ad-15f0-4031-876d-245174041019"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{producto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="373" y="1" width="59" height="18" uuid="6cba4ac5-7598-4ece-9479-e9bb8f93ec5d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d26d3ba1-ad42-415e-82bf-c92b3a89a5c8"/>
+				</reportElement>
+				<textElement textAlignment="Right" markup="rtf"/>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="505" y="3" width="80" height="16" uuid="14900c10-6442-48a9-9dea-8d51d810f0e7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b3ce9fec-f2e4-4bdf-bb47-414f97cedaef"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{subtotal_line}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="296" y="2" width="74" height="15" uuid="0c666f21-7c0f-4a08-9bff-e3b8f58df5bb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ac2bf1a5-9773-4dd4-9ea0-6ea9a32047ef"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{precio_unit}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="71" splitType="Stretch">
+			<textField>
+				<reportElement mode="Opaque" x="410" y="0" width="99" height="16" uuid="01129e26-1759-4c32-a1e4-6c356c290c67"/>
+				<textFieldExpression><![CDATA["IMPORTE BASE="]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="33" width="242" height="30" uuid="7c08a935-ce9e-40ea-a34d-1e6c958de6cc"/>
+				<textFieldExpression><![CDATA["GRACIAS POR SU COMPRA"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="512" y="3" width="72" height="16" uuid="24a8846f-bfcf-41eb-8cc0-53b7a2e4435e"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{importe}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="19" width="67" height="18" uuid="64d74125-2690-4ad3-be4d-4947a4e27b22"/>
+				<textFieldExpression><![CDATA["IVA 15%="]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="509" y="22" width="80" height="15" uuid="7082ac8a-b227-4a6f-821b-a9a6306cd8d0"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{impuestos}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="112" splitType="Stretch">
+			<textField>
+				<reportElement x="450" y="20" width="100" height="15" uuid="0b64ca15-a1a3-4181-94e1-bbb5371ccdf7"/>
+				<textFieldExpression><![CDATA[$F{CURRENT_DATE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="43" width="140" height="14" uuid="b1c29e56-6950-44b9-a2b8-46969030e1ba"/>
+				<textFieldExpression><![CDATA[$F{CURRENT_USER}]]></textFieldExpression>
+			</textField>
+			<image scaleImage="FillFrame" onErrorType="Icon" evaluationTime="Auto">
+				<reportElement stretchType="RelativeToTallestObject" mode="Opaque" x="14" y="18" width="351" height="56" uuid="61ca551b-0f78-4a15-9291-d10e22301dc9"/>
+				<graphicElement fill="Solid"/>
+				<imageExpression><![CDATA["C:/Odoo19_addons/Modulos_trabajando/Modulos_propios/nc_document_template_flash/report/icondown.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+</jasperReport>
