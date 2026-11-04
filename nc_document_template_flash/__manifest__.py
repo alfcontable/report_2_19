@@ -1,6 +1,7 @@
 {
     'name': 'NC Report Flash - Jasper JRXML',
     'icon': '/nc_document_template_flash/static/description/icon.png',
+    'images': ['static/description/banner.png'],
     'version': '19.0.1.1.0',
     'price': 79.00,
     'currency':'USD',
